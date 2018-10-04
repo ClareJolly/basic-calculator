@@ -222,6 +222,6 @@ Onto the next user story....
 
 TDD consists of looping through a process
 
-* RED - get a failing test
-* GREEN - get a passing test
-* REFACTOR - improve the code while keeping your tests 'GREEN'
+* **RED** - get a failing test
+* **GREEN** - get a passing test
+* **REFACTOR** - improve the code while keeping your tests 'GREEN'
