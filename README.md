@@ -131,7 +131,7 @@ We have an 'add' **verb** in the user story so this will be a method
  calculator.add(1,2)
  ```
 
- ** Error: ** `NoMethodError (undefined method `add' for #<Calculator:0x00007fa5b109b678>)`
+ ** Error: ** ```NoMethodError (undefined method `add' for #<Calculator:0x00007fa5b109b678>)```
 
  Now a ** Unit test ** in the rspec file
 
@@ -163,7 +163,65 @@ end
 rspec ...... ` 1 example, 0 failures `
 
 feature test ......
-``` 2.5.1 :005 > calculator.add(1,2)
- => 3 ```
+```
+2.5.1 :005 > calculator.add(1,2)
+ => 3
+ ```
 
- 
+ ### Are we done yet?
+
+ So we've passed all our features from the user story.  but it's worth another unit test
+
+ ```
+ describe Calculator do
+   it 'adds 3 and 5 and returns 8' do
+   calc = Calculator.new
+   expect(calc.add(3,5)).to eq(8)
+   end
+ end
+ ```
+
+ ** Failed **
+
+ ```
+expected: 8
+got: 3
+```
+
+So fix it - ** in the simplest way **
+
+This might actually be
+```
+def add(x,y)
+  if x == 1 && y == 2
+    3
+  elsif x == 3 && y == 5
+    8
+  end
+end
+```
+
+rspec now passes as does feature test but I think we know that this isn't the best way of coding our method
+
+### Can we do better?
+
+Final step is to refactor **while still having working tests**
+
+So for this example
+```
+def add(x,y)
+  x + y
+end
+```
+
+Much better, and the tests still pass.
+
+Onto the next user story....
+
+## In conclusion
+
+TDD consists of looping through a process
+
+* RED - get a failing test
+* GREEN - get a passing test
+* REFACTOR - improve the code while keeping your tests 'GREEN'
