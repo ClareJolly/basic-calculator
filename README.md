@@ -62,7 +62,7 @@ touch ./spec/calculator_spec.rb
 
 and write your first test
 
-```
+``` ruby
 describe Calculator do
 end
 ```
@@ -97,7 +97,7 @@ touch ./lib/calculator.rb
 
  In the calculator file create the Class
 
- ```
+ ``` ruby
  class Calculator
  end
  ```
@@ -135,7 +135,7 @@ We have an 'add' **verb** in the user story so this will be a method
 
  Now a ** Unit test ** in the rspec file
 
- ```
+ ``` ruby
  describe Calculator do
    it 'adds 1 and 2 and returns 3' do
    calc = Calculator.new
@@ -154,7 +154,7 @@ We have an 'add' **verb** in the user story so this will be a method
 
 In the calculator code, add in the _simplest_ code to meet the requirements
 
-```
+``` ruby
 def add(x,y)
   3
 end
@@ -172,7 +172,7 @@ feature test ......
 
  So we've passed all our features from the user story.  but it's worth another unit test
 
- ```
+ ``` ruby
  describe Calculator do
    it 'adds 3 and 5 and returns 8' do
    calc = Calculator.new
@@ -191,7 +191,7 @@ got: 3
 So fix it - ** in the simplest way **
 
 This might actually be
-```
+``` ruby
 def add(x,y)
   if x == 1 && y == 2
     3
@@ -208,7 +208,7 @@ rspec now passes as does feature test but I think we know that this isn't the be
 Final step is to refactor **while still having working tests**
 
 So for this example
-```
+``` ruby
 def add(x,y)
   x + y
 end
